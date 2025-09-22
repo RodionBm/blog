@@ -6,10 +6,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 
+type Entry = {
+  text: string;
+  tag: string;
+  date: string;
+};
+
 export default function SkillJournal() {
   const [entry, setEntry] = useState("");
   const [tag, setTag] = useState("");
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = useState<Entry[]>([]);
 
   const handleSave = () => {
     if (entry.trim() !== "") {
